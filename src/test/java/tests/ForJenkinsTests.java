@@ -1,7 +1,11 @@
 package tests;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;
+
+import static io.qameta.allure.Allure.step;
 
 public class ForJenkinsTests extends TestBase{
 
@@ -17,11 +21,12 @@ public class ForJenkinsTests extends TestBase{
             int monthIndex = 3;
             int yearIndex = 25;
             RegistrationPage registrationPage = new RegistrationPage();
+            SelenideLogger.addListener("allure", new AllureSelenide());
 
-            registrationPage.openPage();
-            registrationPage.fillForm(user, dayIndex, monthIndex, yearIndex);
-            registrationPage.clickSubmit();
-            registrationPage.checkModal(user);
-            registrationPage.closeModal();
+                registrationPage.openPage();
+                registrationPage.fillForm(user, dayIndex, monthIndex, yearIndex);
+                registrationPage.clickSubmit();
+                registrationPage.checkModal(user);
+                registrationPage.closeModal();
         }
 }

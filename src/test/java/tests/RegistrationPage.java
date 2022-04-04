@@ -2,6 +2,7 @@ package tests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import java.io.File;
 
@@ -22,16 +23,19 @@ public class RegistrationPage {
     private final SelenideElement datepickerInput = $("#dateOfBirthInput");
 
     //functions
+    @Step("Open page")
     public void openPage() {
         open("/automation-practice-form");
         $("h5").shouldHave(Condition.text("Student Registration Form"));
     }
 
+    @Step("Close Modal")
     public void closeModal() {
         $("#closeLargeModal").click();
         $(".modal-header").shouldNotBe(Condition.visible);
     }
 
+    @Step("Check filled data")
     public void checkModal(UserData user) {
         $(".modal-header").shouldHave(Condition.text("Thanks for submitting the form"));
         $("tbody").shouldHave(Condition.text(user.firstName), Condition.text(user.lastName), Condition.text(user.email),
@@ -40,6 +44,7 @@ public class RegistrationPage {
                 Condition.text(user.address), Condition.text("NCR Delhi"));
     }
 
+    @Step("Fill out form")
     public void fillForm(UserData user,
                          String dayIndex, int monthIndex, int yearIndex) {
         firstNameInput.setValue(user.firstName);
@@ -60,6 +65,7 @@ public class RegistrationPage {
         $("#city div:nth-child(3) div div").click();
     }
 
+    @Step("Click submit")
     public void clickSubmit() {
         $("#submit").click();
     }

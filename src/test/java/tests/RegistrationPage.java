@@ -52,7 +52,7 @@ public class RegistrationPage {
         $("#subjects-label").click();
         subjectInput.setValue("Computer Science").pressEnter();
         $("[for='hobbies-checkbox-1']").click();
-        $("#uploadPicture").uploadFile(new File("src/test/resources/picture.jpg"));
+        //$("#uploadPicture").uploadFile(new File("src/test/resources/picture.jpg"));
         currentAddress.setValue(user.address);
         $("#state").click();
         $("#state div:nth-child(3) div div").click();

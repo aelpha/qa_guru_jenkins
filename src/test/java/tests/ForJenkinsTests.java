@@ -21,7 +21,6 @@ public class ForJenkinsTests extends TestBase{
             int monthIndex = 3;
             int yearIndex = 25;
             RegistrationPage registrationPage = new RegistrationPage();
-            SelenideLogger.addListener("allure", new AllureSelenide());
 
                 registrationPage.openPage();
                 registrationPage.fillForm(user, dayIndex, monthIndex, yearIndex);

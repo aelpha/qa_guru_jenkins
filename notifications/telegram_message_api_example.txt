@@ -17,7 +17,7 @@ curl -X POST \
      "-Denv=${ENVIRONMENT}" \
      "-Dreport.link=${BUILD_URL}" \
      "-DconfigFile=notifications/telegram_config.json" \
-     -jar notifications/allure-notifications-4.1.jar
+     -jar notifications/allure-notifications-3.1.2.jar
 
      java  \
      "-Dchat.id=-1001731234107" \

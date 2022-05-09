@@ -8,7 +8,7 @@ curl -X POST \
 
      Template
 
-     java "-DconfigFile=notifications/telegram_config.json" -jar notifications/allure-notifications-4.1.jar
+     java "-DconfigFile=notifications/telegram_config.json" -jar notifications/allure-notifications-3.1.2.jar
 
      Jenkins
 
